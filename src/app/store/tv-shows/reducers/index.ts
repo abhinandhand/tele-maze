@@ -18,8 +18,9 @@ export const initialState: IState = adapter.getInitialState({});
 export const tvShowReducer = createReducer(
 	initialState,
 
-	on(DashboardActions.loadDashboardInfos, (state, action) => adapter.addMany(action.tvShows, state)),
-  on(DashboardActions.clearDashBoardInfo, (state) => adapter.removeAll(state))
+	on(DashboardActions.loadTvShowInfos, (state, action) => adapter.addMany(action.tvShows, state)),
+  on(DashboardActions.addTvShowInfo, (state, action) => adapter.addOne(action.tvShow, state)),
+  on(DashboardActions.clearTvShowInfo, (state) => adapter.removeAll(state))
 );
 
 

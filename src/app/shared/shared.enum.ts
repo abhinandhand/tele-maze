@@ -5,3 +5,10 @@ export enum Genre {
   Crime = 'Crime',
   Drama = 'Drama'
 }
+
+export enum TeleMazeRoutes {
+  Dashboard = 'dashboard',
+  Detail = 'detail',
+  Search = 'search',
+  ErrorNotFound = 'error-not-found'
+}
