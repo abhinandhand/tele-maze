@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { LoaderStoreModule } from './store/loader/loader.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { SharedModule } from './shared/shared.module';
     }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    HttpClientModule
+    HttpClientModule,
+    LoaderStoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

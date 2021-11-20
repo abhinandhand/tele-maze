@@ -24,6 +24,9 @@ import { ErrorNotFoundComponent } from './components/error/404/404.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    HeaderComponent
   ]
 })
 export class SharedModule { }

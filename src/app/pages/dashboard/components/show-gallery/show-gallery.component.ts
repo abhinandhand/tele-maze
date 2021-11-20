@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { dashboardPageOnDestroy } from '../../actions/dashboard.actions';
 
 @Component({
   selector: 'app-show-gallery',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowGalleryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    this.store.dispatch(dashboardPageOnDestroy());
   }
 
 }
