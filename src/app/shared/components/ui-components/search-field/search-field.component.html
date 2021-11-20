@@ -1,0 +1,11 @@
+<form (ngSubmit)="search()">
+		<input
+			#searchInput
+			id="search-input"
+			type="text"
+			[placeholder]="'Search shows worldwide'"
+			[formControl]="searchControl"
+			(keyup.enter)="searchInput.blur()"
+      autocomplete="off"
+		/>
+</form>
