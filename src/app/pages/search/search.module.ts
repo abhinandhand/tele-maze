@@ -6,6 +6,7 @@ import { tvShowReducer, tvShowsStateFeatureKey } from 'src/app/store/tv-shows/re
 import { SearchEffects } from './effects/search.effects';
 import { ResultsComponent } from './components/results/results.component';
 import { SearchRoutingModule } from './search-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -16,6 +17,7 @@ import { SearchRoutingModule } from './search-routing.module';
   imports: [
     CommonModule,
     SearchRoutingModule,
+    SharedModule,
     StoreModule.forFeature(tvShowsStateFeatureKey, tvShowReducer),
     EffectsModule.forFeature([SearchEffects])
   ]

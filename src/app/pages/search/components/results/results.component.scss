@@ -1,0 +1,13 @@
+@import '../../../../../styles/abstracts/config';
+
+.search {
+
+  &__result {
+
+    &-title{
+      color:  $color-grey;
+      border-bottom: 2px solid $color-grey;
+      padding-bottom: 0.5rem;
+    }
+  }
+}

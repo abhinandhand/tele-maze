@@ -20,17 +20,26 @@
       top: 0;
       left: 0;
       right: 0;
-      padding: 1rem 3rem;
+      padding: 1rem 10rem 1rem 3rem;
 
       @include respond(mobile) {
           justify-content: center;
       }
   }
 
-  &__items-left, &__items-right{
+  &__items-left {
+
       @include respond(mobile){
           display: none;
       }
+  }
+
+  &__items-right{
+      width: 300px;
+
+    @include respond(mobile){
+        display: none;
+    }
   }
 
   &__items-menu{

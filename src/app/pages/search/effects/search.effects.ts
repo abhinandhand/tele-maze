@@ -1,24 +1,28 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { ROUTER_NAVIGATION } from "@ngrx/router-store";
-import { filter, switchMap } from "rxjs/operators";
+import { ROUTER_NAVIGATED } from "@ngrx/router-store";
+import { Store } from "@ngrx/store";
+import { filter, switchMap, tap } from "rxjs/operators";
 import { TvShow, TvShowSearchResults } from "src/app/shared/models/tvshow";
 import { TeleMazeService } from "src/app/shared/services/tele-maze.service";
 import { TeleMazeRoutes } from "src/app/shared/shared.enum";
+import { setLoading } from "src/app/store/loader/actions/loader.actions";
 import { loadTvShowInfos } from "src/app/store/tv-shows/actions/tv-shows.actions";
 
 @Injectable()
 export class SearchEffects {
 
   searchRouted$ = createEffect(() => this.action$.pipe(
-      ofType(ROUTER_NAVIGATION),
+      ofType(ROUTER_NAVIGATED),
       filter(() => location.pathname.split('/').includes(TeleMazeRoutes.Search)),
-      switchMap(() => this.teleMazeService.search(location.search.split('=')[1]).
+      tap(() => this.store.dispatch(setLoading({isLoading: true}))),
+      switchMap(() => this.teleMazeService.search(decodeURI(location.search).split('=')[1]).
         pipe(
           switchMap((response) => {
             const searchResults = this.mapTvShows(response);
             return [
-              loadTvShowInfos({tvShows: searchResults})
+              loadTvShowInfos({tvShows: searchResults}),
+              setLoading({isLoading: false}),
             ]
           })
         ))
@@ -26,6 +30,7 @@ export class SearchEffects {
 
   constructor(
     private action$: Actions,
+    private store: Store,
     private teleMazeService: TeleMazeService,
   ){}
 

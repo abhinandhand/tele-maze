@@ -1,6 +1,6 @@
 <a routerLink="/detail/{{show.id}}">
   <div class="card">
-    <img [src]="show.image.medium" alt="" loading=lazy style="width: 100%;">
+    <img [src]="show?.image?.medium" appImgFallback  loading=lazy style="width: 100%;">
   </div>
 </a>
 

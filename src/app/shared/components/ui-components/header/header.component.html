@@ -5,7 +5,9 @@
             <h1 routerLink="/dashboard" class="header__logo-title">Tele Maze</h1>
           </div>
           <div class="header__items-menus"></div>
-          <div class="header__items-right">Search box</div>
+          <div class="header__items-right">
+            <search-field (searchTermEvent)="submit($event)"></search-field>
+          </div>
       </div>
   </nav>
 </div>

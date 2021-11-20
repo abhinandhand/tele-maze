@@ -1,1 +1,8 @@
-<h1>results works!</h1>
+<ng-container *ngIf="isLoading$ | async; else displayTvShow">
+  <loader></loader>
+</ng-container>
+
+<ng-template #displayTvShow>
+  <h2 class="search__result-title">Search results</h2>
+  <genre-show-list [shows]="(searchResults$ | async)"></genre-show-list>
+</ng-template>
