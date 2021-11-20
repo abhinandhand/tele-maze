@@ -6,14 +6,14 @@ import * as DashboardActions from "../actions/tv-shows.actions";
 export const tvShowsStateFeatureKey = 'tv-shows';
 
 
-export interface IState extends EntityState<TvShow> {
+export interface TvShowsState extends EntityState<TvShow> {
   }
 
 export const adapter: EntityAdapter<TvShow> = createEntityAdapter<TvShow>({
     selectId: (tvShow: TvShow) => tvShow.id
   });
 
-export const initialState: IState = adapter.getInitialState({});
+export const initialState: TvShowsState = adapter.getInitialState({});
 
 export const tvShowReducer = createReducer(
 	initialState,
@@ -24,12 +24,7 @@ export const tvShowReducer = createReducer(
 );
 
 
-
-const {
+export const {
 	selectEntities,
 	selectAll
 } = adapter.getSelectors();
-
-export const selectState = createFeatureSelector<IState>(tvShowsStateFeatureKey);
-export const selectPupilLearningObjectiveInfoEntities = createSelector(selectState, selectEntities);
-export const selectPupilLearningObjectiveInfos = createSelector(selectState, selectAll);

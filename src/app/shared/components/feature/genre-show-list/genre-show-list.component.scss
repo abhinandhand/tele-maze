@@ -1,0 +1,20 @@
+.genre {
+  margin: 1.5rem 0rem;
+
+  &-title {
+    font-size: 1.2rem;
+  }
+
+  &-content{
+    display: flex;
+    margin-top: 0.75rem;
+
+    show-card {
+      margin: 0 0.4rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

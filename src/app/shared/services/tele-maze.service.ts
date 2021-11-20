@@ -8,7 +8,7 @@ import { Genre } from '../shared.enum';
 const apiBaseUrl = ' https://api.tvmaze.com/';
 
 enum MazeEndPoint {
-  Shows = 'shows',
+  AllShows = 'shows',
   Search = 'search/shows',
   Detail = 'shows/'
 }
@@ -21,10 +21,9 @@ export class TeleMazeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getShows(): Observable<TvShow[]> {
-    const genreAsQueryString = Object.values(Genre).join('+');
+  getAllShows(): Observable<TvShow[]> {
 
-    return this.httpClient.get<any>(`${apiBaseUrl}${MazeEndPoint.Shows}`, {params: { q : genreAsQueryString}})
+    return this.httpClient.get<any>(`${apiBaseUrl}${MazeEndPoint.AllShows}`)
       .pipe(map(response => response as TvShow[]));
   }
 

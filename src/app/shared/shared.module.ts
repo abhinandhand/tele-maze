@@ -8,6 +8,10 @@ import { DialogComponent } from './components/ui-components/dialog/dialog.compon
 import { DropdownComponent } from './components/ui-components/dropdown/dropdown.component';
 import { RadioButtonComponent } from './components/ui-components/radio-button/radio-button.component';
 import { ErrorNotFoundComponent } from './components/error/404/404.component';
+import { LoaderComponent } from './components/ui-components/loader/loader.component';
+import { ShowCardComponent } from './components/feature/show-card/show-card.component';
+import { GenreShowListComponent } from './components/feature/genre-show-list/genre-show-list.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,10 +24,20 @@ import { ErrorNotFoundComponent } from './components/error/404/404.component';
     DialogComponent,
     DropdownComponent,
     RadioButtonComponent,
-    ErrorNotFoundComponent
+    ErrorNotFoundComponent,
+    LoaderComponent,
+    ShowCardComponent,
+    GenreShowListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
+  ],
+  exports:[
+    HeaderComponent,
+    LoaderComponent,
+    GenreShowListComponent,
+    ShowCardComponent
   ]
 })
 export class SharedModule { }
