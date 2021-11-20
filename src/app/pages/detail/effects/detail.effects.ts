@@ -12,7 +12,7 @@ export class DetailEffects {
   detailRouted$ = createEffect(() => this.action$.pipe(
       ofType(ROUTER_NAVIGATION),
       filter(() => location.pathname.split('/').includes(TeleMazeRoutes.Detail)),
-      switchMap(() => this.teleMazeService.showDetail(3).
+      switchMap(() => this.teleMazeService.showDetail(location.pathname.split('/')[2]).
         pipe(
           switchMap((tvShow) => {
             return [

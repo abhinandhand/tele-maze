@@ -28,7 +28,7 @@ export class TeleMazeService {
       .pipe(map(response => response as TvShow[]));
   }
 
-  showDetail(showId: number): Observable<TvShow> {
+  showDetail(showId: string): Observable<TvShow> {
     return this.httpClient.get<any>(`${apiBaseUrl}${MazeEndPoint.Detail}${showId}`)
       .pipe(map(response => response as TvShow));
   }

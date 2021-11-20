@@ -13,7 +13,7 @@ export class SearchEffects {
   searchRouted$ = createEffect(() => this.action$.pipe(
       ofType(ROUTER_NAVIGATION),
       filter(() => location.pathname.split('/').includes(TeleMazeRoutes.Search)),
-      switchMap(() => this.teleMazeService.search('under the dome').
+      switchMap(() => this.teleMazeService.search(location.search.split('=')[1]).
         pipe(
           switchMap((response) => {
             const searchResults = this.mapTvShows(response);

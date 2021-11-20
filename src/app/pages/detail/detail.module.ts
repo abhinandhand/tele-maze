@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { tvShowReducer, tvShowsStateFeatureKey } from 'src/app/store/tv-shows/reducers';
 import { EpisodesComponent } from './components/episodes/episodes.component';
 import { ShowDetailComponent } from './components/show-detail/show-detail.component';
+import { DetailRoutingModule } from './detail-routing.module';
 import { DetailEffects } from './effects/detail.effects';
 
 
@@ -16,6 +17,7 @@ import { DetailEffects } from './effects/detail.effects';
   ],
   imports: [
     CommonModule,
+    DetailRoutingModule,
     StoreModule.forFeature(tvShowsStateFeatureKey, tvShowReducer),
     EffectsModule.forFeature([DetailEffects])
   ]
