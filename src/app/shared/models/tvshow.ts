@@ -12,4 +12,10 @@ export interface TvShow {
   image: ShowImages;
   summary: string;
   premiered: Date;
+  score?: number;
+}
+
+export interface TvShowSearchResults{
+  score: number;
+  show: TvShow
 }
