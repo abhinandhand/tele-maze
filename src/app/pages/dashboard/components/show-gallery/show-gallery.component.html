@@ -1,3 +1,14 @@
-<div>
+<ng-container *ngIf="isLoading$ | async; else displayTvShow">
+  <loader></loader>
+</ng-container>
 
-</div>
+<ng-template #displayTvShow>
+  <genre-show-list [shows]="(thrillerShows$ | async)" [title]="'Thriller shows'"></genre-show-list>
+  <genre-show-list [shows]="(dramaShows$ | async)" [title]="'Drama shows'"></genre-show-list>
+  <genre-show-list [shows]="(comedyShows$ | async)" [title]="'Comedy shows'"></genre-show-list>
+  <genre-show-list [shows]="(familyShows$ | async)" [title]="'Family shows'"></genre-show-list>
+  <genre-show-list [shows]="(romanceShows$ | async)" [title]="'Romance shows'"></genre-show-list>
+  <genre-show-list [shows]="(crimeShows$ | async)" [title]="'Crime shows'"></genre-show-list>
+  <genre-show-list [shows]="(musicShows$ | async)" [title]="'Music shows'"></genre-show-list>
+  <genre-show-list [shows]="(scienceFictionShows$ | async)" [title]="'Science Fiction show'">s</genre-show-list>
+</ng-template>

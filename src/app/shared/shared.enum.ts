@@ -1,9 +1,15 @@
 export enum Genre {
   Comedy = 'Comedy',
+  Thriller = 'Thriller',
   Sports = 'Sports',
   Music = 'Music',
   Crime = 'Crime',
-  Drama = 'Drama'
+  Drama = 'Drama',
+  Family = 'Family',
+  Romance = 'Romance',
+  Anime = 'Anime',
+  Fantasy = 'Fantasy',
+  ScienceFiction = 'Science-Fiction'
 }
 
 export enum TeleMazeRoutes {

@@ -1,0 +1,8 @@
+<div class="genre">
+  <h2 *ngIf="title" class="genre-title">{{title}}</h2>
+  <div class="genre-content">
+    <ng-container *ngFor="let show of shows">
+        <show-card [show]="show"></show-card>
+    </ng-container>
+  </div>
+</div>
