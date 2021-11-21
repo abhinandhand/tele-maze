@@ -8,12 +8,44 @@
   &-content{
     display: flex;
     margin-top: 0.75rem;
+    overflow: hidden;
 
     show-card {
       margin: 0 0.4rem;
 
       &:first-child {
         margin-left: 0;
+      }
+    }
+
+    .chevron {
+      &__svg-rightbox {
+        position: absolute;
+        z-index: 50;
+        top: 50%;
+        right: 0;
+        transform: translate(0%, -50%);
+        margin-right: 0.8rem;
+        cursor: pointer;
+      }
+
+      &__svg-leftbox {
+        position: absolute;
+        z-index: 50;
+        top: 50%;
+        left: 0;
+        transform: translate(0%, -50%);
+        margin-left: 0.8rem;
+        cursor: pointer;
+      }
+
+      &__svg-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &__svg-inline--fa {
+        fill: red;
       }
     }
   }

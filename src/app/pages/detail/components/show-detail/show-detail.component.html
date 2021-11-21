@@ -22,7 +22,7 @@
             <dd>Running</dd>
           </dl>
 
-          <dl>
+          <dl *ngIf="show[0].genres.length">
             <dt>Genre</dt>
             <dd>{{show[0].genres}}</dd>
           </dl>

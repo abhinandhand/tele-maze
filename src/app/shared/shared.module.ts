@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { EffectsModule } from '@ngrx/effects';
 import { ErrorNotFoundComponent } from './components/error/404/404.component';
+import { ErrorEffects } from './components/error/effects/error.effects';
 import { GenreShowListComponent } from './components/feature/genre-show-list/genre-show-list.component';
 import { ShowCardComponent } from './components/feature/show-card/show-card.component';
 import { ButtonComponent } from './components/ui-components/button/button.component';
@@ -15,6 +17,7 @@ import { ModalComponent } from './components/ui-components/modal/modal.component
 import { RadioButtonComponent } from './components/ui-components/radio-button/radio-button.component';
 import { SearchFieldComponent } from './components/ui-components/search-field/search-field.component';
 import { ImgFallbackDirective } from './directives/image-fall-back.directive';
+import { NetworkErrorComponent } from './components/error/network-error/network-error.component';
 
 
 
@@ -32,13 +35,15 @@ import { ImgFallbackDirective } from './directives/image-fall-back.directive';
     ShowCardComponent,
     GenreShowListComponent,
     SearchFieldComponent,
-    ImgFallbackDirective
+    ImgFallbackDirective,
+    NetworkErrorComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    EffectsModule.forFeature([ErrorEffects])
   ],
   exports:[
     HeaderComponent,
