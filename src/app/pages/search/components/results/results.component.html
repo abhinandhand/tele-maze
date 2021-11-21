@@ -3,6 +3,8 @@
 </ng-container>
 
 <ng-template #displayTvShow>
-  <h2 class="search__result-title">Search results</h2>
-  <genre-show-list [shows]="(searchResults$ | async)"></genre-show-list>
+  <ng-container *ngIf="(searchResults$ | async) as searchResults">
+    <h2 class="search__result-title"><span *ngIf="!searchResults.length">"0" </span>Search results</h2>
+    <genre-show-list [shows]="searchResults"></genre-show-list>
+  </ng-container>
 </ng-template>

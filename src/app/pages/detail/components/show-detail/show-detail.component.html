@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="show__detail-poster">
-      <img [src]="show[0].image.original" appImgFallback  style="width: 100%;">
+      <img [src]="show[0]?.image?.original" appImgFallback loading=lazy style="width: 100%;">
     </div>
   </div>
 </ng-template>

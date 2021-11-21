@@ -49,7 +49,8 @@ import { NetworkErrorComponent } from './components/error/network-error/network-
     HeaderComponent,
     LoaderComponent,
     GenreShowListComponent,
-    ShowCardComponent
+    ShowCardComponent,
+    ImgFallbackDirective
   ]
 })
 export class SharedModule { }
