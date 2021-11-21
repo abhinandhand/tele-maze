@@ -5,67 +5,72 @@ import * as fromTvShows from "./index";
 
 const selectTvShowsState = createFeatureSelector<fromTvShows.TvShowsState>('tv-shows');
 
-export const getAllTvShows = createSelector(
+export const selectAllTvShows = createSelector(
 	selectTvShowsState,
 	fromTvShows.selectAll
 );
 
-export const getFamilyShows = createSelector(
-  getAllTvShows,
+export const selectFamilyShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.Family))
 );
 
-export const getThrillerShows = createSelector(
-  getAllTvShows,
+export const selectThrillerShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.Thriller))
 );
 
-export const getDramaShows = createSelector(
-  getAllTvShows,
+export const selectDramaShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.Drama))
 );
 
-export const getComedyShows = createSelector(
-  getAllTvShows,
+export const selectComedyShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.Comedy))
 );
 
-export const getCrimeShows = createSelector(
-  getAllTvShows,
+export const selectCrimeShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.Crime))
 );
 
-export const getSportsShows = createSelector(
-  getAllTvShows,
+export const selectSportsShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.Sports))
 );
 
-export const getMusicShows = createSelector(
-  getAllTvShows,
+export const selectMusicShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.Music))
 );
 
-export const getRomanceShows = createSelector(
-  getAllTvShows,
+export const selectRomanceShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.Music))
 );
 
-export const getScienceFictionShows = createSelector(
-  getAllTvShows,
+export const selectScienceFictionShows = createSelector(
+  selectAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.ScienceFiction))
 );
 
-export const getDetailedShow = createSelector(
+export const selectTopRatedShows = createSelector(
+  selectAllTvShows,
+  (shows: TvShow[]): TvShow[] => shows
+);
+
+export const selectDetailedShow = createSelector(
 	selectTvShowsState,
 	fromTvShows.selectAll
 );
 
-export const getDetailedShowWithId = (id: number) => createSelector(
+export const selectDetailedShowWithId = (id: number) => createSelector(
   fromTvShows.selectEntities,
   entities => entities[id]
 )
 
-export const getTvShowSearchResults = createSelector(
+export const selectTvShowSearchResults = createSelector(
 	selectTvShowsState,
 	fromTvShows.selectAll
 );

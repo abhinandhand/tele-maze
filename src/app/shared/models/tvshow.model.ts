@@ -1,4 +1,3 @@
-import { NumberValueAccessor } from "@angular/forms";
 import { Genre } from "../shared.enum";
 import { ShowImages } from "./showImages.model";
 

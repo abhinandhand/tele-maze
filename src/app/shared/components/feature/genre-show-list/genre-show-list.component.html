@@ -1,11 +1,16 @@
 <div class="genre">
   <h2 *ngIf="title" class="genre-title">{{ title }}</h2>
   <div class="genre__content">
-    <div class="genre__content-list" #genrelist>
+    <div class="genre__content-list"
+       #genrelist
+      *ngIf="(deviceSetting$ | async) as deviceSetting"
+      [ngClass]="{'touch-screen': deviceSetting.userAgent !== 'desktop'}">
+
       <ng-container *ngFor="let show of shows">
         <show-card [show]="show"></show-card>
       </ng-container>
-      <ng-container *ngIf="(deviceSetting$ | async)?.deviceType === 'desktop'">
+
+      <ng-container *ngIf="deviceSetting.userAgent === 'desktop'">
         <div *ngIf="currentScrollPosition < overallScrollWidth" class="chevron chevron__svg-rightbox">
           <img
             (click)="scrollRight()"
@@ -21,6 +26,7 @@
           />
         </div>
       </ng-container>
+
     </div>
   </div>
 </div>

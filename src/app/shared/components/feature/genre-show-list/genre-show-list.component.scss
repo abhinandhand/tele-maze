@@ -18,19 +18,9 @@
       margin-top: 0.75rem;
       overflow: hidden;
 
-      // To Do fix- Enable touch screen scroll, adds scroll bar on non touch
-
-      // @include respond(mobile) {
-      //   overflow-x: scroll;
-      // }
-
-      // @include respond(tab-port) {
-      //   overflow-x: scroll;
-      // }
-
-      // @include respond(tab-land) {
-      //   overflow-x: scroll;
-      // }
+      &.touch-screen{
+        overflow-x: scroll;
+      }
 
       show-card {
         margin: 0 0.4rem;

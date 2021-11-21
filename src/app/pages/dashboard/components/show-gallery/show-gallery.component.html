@@ -3,6 +3,7 @@
 </ng-container>
 
 <ng-template #displayTvShow>
+  <!-- <genre-show-list [shows]="(recentShows$ | async)" [title]="'Recently added shows'"></genre-show-list> -->
   <genre-show-list [shows]="(thrillerShows$ | async)" [title]="'Thriller shows'"></genre-show-list>
   <genre-show-list [shows]="(dramaShows$ | async)" [title]="'Drama shows'"></genre-show-list>
   <genre-show-list [shows]="(comedyShows$ | async)" [title]="'Comedy shows'"></genre-show-list>

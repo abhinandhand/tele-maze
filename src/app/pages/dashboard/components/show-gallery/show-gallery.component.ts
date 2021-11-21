@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { TvShow } from 'src/app/shared/models/tvshow.model';
 import { getLoadingState } from 'src/app/store/loader/reducer/loader.selector';
-import { getComedyShows, getCrimeShows, getDramaShows, getFamilyShows, getMusicShows, getRomanceShows, getScienceFictionShows, getSportsShows, getThrillerShows } from 'src/app/store/tv-shows/reducers/tv-shows.selectors';
+import { selectComedyShows, selectCrimeShows, selectDramaShows, selectFamilyShows, selectMusicShows, selectRomanceShows, selectScienceFictionShows, selectSportsShows, selectThrillerShows, selectTopRatedShows } from 'src/app/store/tv-shows/reducers/tv-shows.selectors';
 import { dashboardPageOnDestroy } from '../../actions/dashboard.actions';
 
 @Component({
@@ -14,15 +14,16 @@ import { dashboardPageOnDestroy } from '../../actions/dashboard.actions';
 export class ShowGalleryComponent implements OnInit {
   isLoading$: Observable<boolean> = this.store.select(getLoadingState);
 
-  thrillerShows$: Observable<TvShow[]> = this.store.select(getThrillerShows)
-  familyShows$: Observable<TvShow[]> = this.store.select(getFamilyShows);
-  dramaShows$: Observable<TvShow[]> = this.store.select(getDramaShows);
-  comedyShows$: Observable<TvShow[]> = this.store.select(getComedyShows);
-  sportsShows$: Observable<TvShow[]> = this.store.select(getSportsShows);
-  crimeShows$: Observable<TvShow[]> = this.store.select(getCrimeShows);
-  musicShows$: Observable<TvShow[]> = this.store.select(getMusicShows);
-  romanceShows$: Observable<TvShow[]> =  this.store.select(getRomanceShows);
-  scienceFictionShows$: Observable<TvShow[]> = this.store.select(getScienceFictionShows);
+  topRatedShows$: Observable<TvShow[]> = this.store.select(selectTopRatedShows)
+  thrillerShows$: Observable<TvShow[]> = this.store.select(selectThrillerShows);
+  familyShows$: Observable<TvShow[]> = this.store.select(selectFamilyShows);
+  dramaShows$: Observable<TvShow[]> = this.store.select(selectDramaShows);
+  comedyShows$: Observable<TvShow[]> = this.store.select(selectComedyShows);
+  sportsShows$: Observable<TvShow[]> = this.store.select(selectSportsShows);
+  crimeShows$: Observable<TvShow[]> = this.store.select(selectCrimeShows);
+  musicShows$: Observable<TvShow[]> = this.store.select(selectMusicShows);
+  romanceShows$: Observable<TvShow[]> =  this.store.select(selectRomanceShows);
+  scienceFictionShows$: Observable<TvShow[]> = this.store.select(selectScienceFictionShows);
 
 
   constructor(private store: Store) { }

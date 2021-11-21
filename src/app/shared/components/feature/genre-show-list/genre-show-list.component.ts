@@ -1,9 +1,8 @@
-import { AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Settings } from 'src/app/shared/models/settings.mode';
 import { TvShow } from 'src/app/shared/models/tvshow.model';
-import { DeviceType } from 'src/app/shared/shared.enum';
 import { selectSettings } from 'src/app/store/settings/reducer/settings.selector';
 
 @Component({
