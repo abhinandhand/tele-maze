@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { TvShow } from 'src/app/shared/models/tvshow';
+import { TvShow } from 'src/app/shared/models/tvshow.model';
 import { getLoadingState } from 'src/app/store/loader/reducer/loader.selector';
 import { getComedyShows, getCrimeShows, getDramaShows, getFamilyShows, getMusicShows, getRomanceShows, getScienceFictionShows, getSportsShows, getThrillerShows } from 'src/app/store/tv-shows/reducers/tv-shows.selectors';
 import { dashboardPageOnDestroy } from '../../actions/dashboard.actions';

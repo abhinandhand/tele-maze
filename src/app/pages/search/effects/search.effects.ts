@@ -2,12 +2,13 @@ import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { ROUTER_NAVIGATED } from "@ngrx/router-store";
 import { Store } from "@ngrx/store";
-import { filter, switchMap, tap } from "rxjs/operators";
-import { TvShow, TvShowSearchResults } from "src/app/shared/models/tvshow";
+import { filter, map, switchMap, tap } from "rxjs/operators";
+import { TvShow, TvShowSearchResults } from "src/app/shared/models/tvshow.model";
 import { TeleMazeService } from "src/app/shared/services/tele-maze.service";
 import { TeleMazeRoutes } from "src/app/shared/shared.enum";
 import { setLoading } from "src/app/store/loader/actions/loader.actions";
-import { loadTvShowInfos } from "src/app/store/tv-shows/actions/tv-shows.actions";
+import { clearTvShowInfo, loadTvShowInfos } from "src/app/store/tv-shows/actions/tv-shows.actions";
+import { searchPageOnDestroy } from "../actions/search.actions";
 
 @Injectable()
 export class SearchEffects {
@@ -26,7 +27,12 @@ export class SearchEffects {
             ]
           })
         ))
-      ))
+      ));
+
+      searchPageOnDestroy$ = createEffect(() => this.action$.pipe(
+        ofType(searchPageOnDestroy),
+        map(() => clearTvShowInfo())
+      ));
 
   constructor(
     private action$: Actions,
@@ -44,7 +50,7 @@ export class SearchEffects {
       name: data.show.name,
       premiered: data.show.premiered,
       rating: data.show.rating,
-      runtime: data.show.runtime,
+      averageRuntime: data.show.averageRuntime,
       summary: data.show.summary
     }))
   }

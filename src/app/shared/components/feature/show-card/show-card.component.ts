@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TvShow } from 'src/app/shared/models/tvshow';
+import { TvShow } from 'src/app/shared/models/tvshow.model';
 
 @Component({
   selector: 'show-card',

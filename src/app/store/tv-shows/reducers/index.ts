@@ -1,6 +1,6 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from "@ngrx/entity";
-import { Action, createFeatureSelector, createReducer, createSelector, on } from "@ngrx/store";
-import { TvShow } from "src/app/shared/models/tvshow";
+import { createReducer, on } from "@ngrx/store";
+import { TvShow } from "src/app/shared/models/tvshow.model";
 import * as DashboardActions from "../actions/tv-shows.actions";
 
 export const tvShowsStateFeatureKey = 'tv-shows';

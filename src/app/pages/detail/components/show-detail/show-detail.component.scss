@@ -1,0 +1,74 @@
+@import '../../../../../styles/abstracts/config';
+
+.show {
+  &__detail {
+    display: flex;
+    margin: -1.5rem -3rem;
+    height: 40rem;
+
+    &-info{
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 0%;
+      height: inherit;
+      padding: 3rem 3rem 0rem;
+
+      .title {
+        font-weight: 200;
+        font-size: 3rem;
+      }
+
+      .stat {
+        color: $color-grey;
+        font-size: 20px;
+        margin: 0.8rem 0rem;
+
+        span {
+          margin:  0px 0.4rem;
+        }
+      }
+
+      .summary {
+        font-weight: 200;
+        line-height: 30px;
+        margin-top: 2rem;
+      }
+
+      .description {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+
+        dl {
+          display: grid;
+          grid-template-columns: 0.18fr 1fr;
+          margin-bottom: 0.4rem;
+          color: $color-grey;
+
+          dt {
+            flex-basis: 100%;
+            font-weight: 700;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          dd {
+            flex-basis: 100%;
+          }
+        }
+      }
+    }
+
+    &-poster{
+      height: inherit;
+      position: relative;
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 40%;
+      overflow: hidden;
+
+      img{
+        height: auto;
+      }
+    }
+  }
+}

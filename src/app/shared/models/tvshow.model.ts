@@ -1,17 +1,17 @@
 import { NumberValueAccessor } from "@angular/forms";
 import { Genre } from "../shared.enum";
-import { ShowImages } from "./showImages";
+import { ShowImages } from "./showImages.model";
 
 export interface TvShow {
   id: number;
   name: string;
   language: string;
   genres: Genre[],
-  runtime: number;
+  averageRuntime: number;
   rating: number;
   image: ShowImages;
   summary: string;
-  premiered: Date;
+  premiered: string;
   score?: number;
 }
 

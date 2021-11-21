@@ -9,6 +9,6 @@ export const dashboardLoadDataFailure = createAction(
 )
 
 export const dashboardPageOnDestroy = createAction(
-  '[Dashboard Page] Dashboard Page On Leaving the Page'
+  '[Dashboard Page] On Leaving the Dashboard Page'
 )
 
