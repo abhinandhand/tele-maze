@@ -1,14 +1,26 @@
 <div class="genre">
-  <h2 *ngIf="title" class="genre-title">{{title}}</h2>
-  <div class="genre-content">
-    <ng-container *ngFor="let show of shows">
+  <h2 *ngIf="title" class="genre-title">{{ title }}</h2>
+  <div class="genre__content">
+    <div class="genre__content-list" #genrelist>
+      <ng-container *ngFor="let show of shows">
         <show-card [show]="show"></show-card>
-    </ng-container>
-    <div class="chevron__svg-rightbox" >
-      <img class="chevron__svg-icon" src="assets/svg/chevron-circle-right-solid.svg" alt="">
-    </div>
-      <div class="chevron__svg-leftbox" >
-      <img class="chevron__svg-icon" src="assets/svg/chevron-circle-left-solid.svg" alt="">
+      </ng-container>
+      <ng-container *ngIf="(deviceSetting$ | async)?.deviceType === 'desktop'">
+        <div *ngIf="currentScrollPosition < overallScrollWidth" class="chevron chevron__svg-rightbox">
+          <img
+            (click)="scrollRight()"
+            class="chevron__svg-icon"
+            src="assets/svg/chevron-circle-right-solid.svg"
+          />
+        </div>
+        <div *ngIf="currentScrollPosition > listContainerWidth" class="chevron chevron__svg-leftbox">
+          <img
+            (click)="scrollLeft()"
+            class="chevron__svg-icon"
+            src="assets/svg/chevron-circle-left-solid.svg"
+          />
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>

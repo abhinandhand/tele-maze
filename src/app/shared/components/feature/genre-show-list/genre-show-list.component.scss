@@ -1,51 +1,72 @@
+@import '../../../../../styles/abstracts/config';
+
 .genre {
+  position: relative;
   margin: 1.5rem 0rem;
 
   &-title {
     font-size: 1.2rem;
   }
 
-  &-content{
-    display: flex;
-    margin-top: 0.75rem;
-    overflow: hidden;
+  &__content {
+    position: relative;
 
-    show-card {
-      margin: 0 0.4rem;
+    &-list {
 
-      &:first-child {
-        margin-left: 0;
-      }
-    }
+      scroll-behavior: smooth;
+      display: flex;
+      margin-top: 0.75rem;
+      overflow: hidden;
 
-    .chevron {
-      &__svg-rightbox {
-        position: absolute;
-        z-index: 50;
-        top: 50%;
-        right: 0;
-        transform: translate(0%, -50%);
-        margin-right: 0.8rem;
-        cursor: pointer;
-      }
+      // To Do fix- Enable touch screen scroll, adds scroll bar on non touch
 
-      &__svg-leftbox {
-        position: absolute;
-        z-index: 50;
-        top: 50%;
-        left: 0;
-        transform: translate(0%, -50%);
-        margin-left: 0.8rem;
-        cursor: pointer;
+      // @include respond(mobile) {
+      //   overflow-x: scroll;
+      // }
+
+      // @include respond(tab-port) {
+      //   overflow-x: scroll;
+      // }
+
+      // @include respond(tab-land) {
+      //   overflow-x: scroll;
+      // }
+
+      show-card {
+        margin: 0 0.4rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
       }
 
-      &__svg-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
+      .chevron {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
 
-      &__svg-inline--fa {
-        fill: red;
+        &__svg-rightbox {
+          position: absolute;
+          z-index: 50;
+          top: 50%;
+          right: 0;
+          transform: translate(0%, -50%);
+        }
+
+        &__svg-leftbox {
+          position: absolute;
+          z-index: 50;
+          top: 50%;
+          left: 0;
+          transform: translate(0%, -50%);
+        }
+
+        &__svg-icon {
+          width: 1.8rem;
+          height: 1.9rem;
+          cursor: pointer;
+        }
       }
     }
   }

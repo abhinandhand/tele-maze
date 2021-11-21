@@ -1,63 +1,68 @@
-@import '../../../../../styles/abstracts/config';
+@import "../../../../../styles/abstracts/config";
 
-
- .header {
+.header {
   height: 5rem;
   color: $color-white;
 
   &__nav {
-      height: inherit;
+    height: inherit;
   }
 
   &__nav-container {
-      background-color: $color-primary;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: inherit;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 1rem 10rem 1rem 3rem;
+    background-color: $color-primary;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 10rem 1rem 3rem;
 
-      @include respond(mobile) {
-          justify-content: center;
-      }
-  }
-
-  &__items-left {
-
-      @include respond(mobile){
-          display: none;
-      }
-  }
-
-  &__items-right{
-      width: 300px;
-
-    @include respond(mobile){
-        display: none;
+    @include respond(mobile) {
+      padding: 0 2rem;
     }
   }
 
-  &__items-menu{
-
-      @include respond(mobile){
-      }
-  }
-
-  &__logo-box{
-      height: inherit;
-  }
-
-  &__logo-img {
-      width: 3.125rem;
-      height: inherit;
-  }
-
-  &__logo-title {
+  &__items-left {
+    display: flex;
+    align-items: center;
     cursor: pointer;
+
+    :first-child {
+      margin-right: 0.8rem;
+    }
+
+    @include respond(mobile) {
+    }
+  }
+
+  &__items-right {
+    width: 300px;
+
+    @include respond(mobile) {
+      align-items: center;
+      width: 200px;
+    }
+  }
+
+  &__items-menu {
+    @include respond(mobile) {
+    }
+  }
+
+
+  &__brand-logo {
+    width: 50px;
+  }
+
+  &__brand-title {
+    cursor: pointer;
+
+    @include respond(mobile) {
+      display: none;
+    }
   }
 }

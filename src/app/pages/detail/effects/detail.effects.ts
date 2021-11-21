@@ -24,7 +24,8 @@ export class DetailEffects {
         pipe(
           switchMap((tvShow) => {
             return [
-              addTvShowInfo({tvShow})
+              addTvShowInfo({tvShow}),
+              setLoading({isLoading: false})
             ]
           })
         )),

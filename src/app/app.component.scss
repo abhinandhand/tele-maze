@@ -4,4 +4,8 @@
   color: $color-white;
   padding: 1.5rem 3rem;
   min-height: 90vh;
+
+  @include respond(mobile) {
+    padding: 1rem;
+  }
 }

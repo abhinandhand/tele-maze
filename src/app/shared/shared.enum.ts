@@ -19,3 +19,10 @@ export enum TeleMazeRoutes {
   NetworkError = 'network-error',
   PageNotFound = 'error/404',
 }
+
+export enum DeviceType {
+  Mobile = 'mobile',
+  TabletPortrait = 'tab-port',
+  TabletLandscape = 'tab-land',
+  Desktop = 'desktop'
+}
