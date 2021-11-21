@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { TvShow } from "src/app/shared/models/tvshow";
+import { TvShow } from "src/app/shared/models/tvshow.model";
 
 export const loadTvShowInfos = createAction(
   '[TV Shows] Load TV Show Infos',

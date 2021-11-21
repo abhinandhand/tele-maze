@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from  'rxjs/operators';
-import { TvShow, TvShowSearchResults } from '../models/tvshow';
-import { Genre } from '../shared.enum';
+import { map } from 'rxjs/operators';
+import { TvShow, TvShowSearchResults } from '../models/tvshow.model';
 
 const apiBaseUrl = ' https://api.tvmaze.com/';
 

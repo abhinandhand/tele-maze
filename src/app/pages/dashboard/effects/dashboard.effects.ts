@@ -4,6 +4,7 @@ import { ROUTER_NAVIGATED, ROUTER_NAVIGATION } from "@ngrx/router-store";
 import { Store } from "@ngrx/store";
 import { of } from "rxjs";
 import { catchError, filter, map, switchMap, tap } from "rxjs/operators";
+import { errorWhileFetchingData } from "src/app/shared/components/error/actions/error.actions";
 import { TeleMazeService } from "src/app/shared/services/tele-maze.service";
 import { TeleMazeRoutes } from "src/app/shared/shared.enum";
 import { setLoading } from "src/app/store/loader/actions/loader.actions";
@@ -33,7 +34,14 @@ export class DashboardEffects {
   dashboardPageOnDestroy$ = createEffect(() => this.action$.pipe(
     ofType(dashboardPageOnDestroy),
     map(() => clearTvShowInfo())
-  ))
+  ));
+
+  dashboardLoadDataFailure$ = createEffect(() => this.action$.pipe(
+    ofType(dashboardLoadDataFailure),
+    switchMap(() => [errorWhileFetchingData(), setLoading({isLoading: false})])
+  ));
+
+
 
   constructor(
     private action$: Actions,

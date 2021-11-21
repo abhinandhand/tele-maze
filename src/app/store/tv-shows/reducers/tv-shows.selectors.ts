@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { TvShow } from "src/app/shared/models/tvshow";
+import { TvShow } from "src/app/shared/models/tvshow.model";
 import { Genre } from "src/app/shared/shared.enum";
 import * as fromTvShows from "./index";
 
@@ -54,6 +54,16 @@ export const getScienceFictionShows = createSelector(
   getAllTvShows,
   (shows: TvShow[]): TvShow[] => shows.filter(show => show.genres.includes(Genre.ScienceFiction))
 );
+
+export const getDetailedShow = createSelector(
+	selectTvShowsState,
+	fromTvShows.selectAll
+);
+
+export const getDetailedShowWithId = (id: number) => createSelector(
+  fromTvShows.selectEntities,
+  entities => entities[id]
+)
 
 export const getTvShowSearchResults = createSelector(
 	selectTvShowsState,

@@ -16,5 +16,6 @@ export enum TeleMazeRoutes {
   Dashboard = 'dashboard',
   Detail = 'detail',
   Search = 'search',
-  ErrorNotFound = 'error-not-found'
+  NetworkError = 'network-error',
+  PageNotFound = 'error/404',
 }
