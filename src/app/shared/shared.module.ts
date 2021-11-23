@@ -20,6 +20,7 @@ import { SearchFieldComponent } from './components/ui-components/search-field/se
 import { ImgFallbackDirective } from './directives/image-fall-back/image-fall-back.directive';
 import { ImageLazyLoadDirective } from './directives/image-lazy-load/image-lazy-load.directive';
 import { DescriptionListComponent } from './components/ui-components/description-list/description-list.component';
+import { SearchEffects } from '../pages/search/effects/search.effects';
 
 
 
@@ -47,7 +48,7 @@ import { DescriptionListComponent } from './components/ui-components/description
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    EffectsModule.forFeature([ErrorEffects])
+    EffectsModule.forFeature([ErrorEffects, SearchEffects])
   ],
   exports:[
     HeaderComponent,
