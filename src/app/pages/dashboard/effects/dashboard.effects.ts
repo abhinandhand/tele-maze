@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { ROUTER_NAVIGATED, ROUTER_NAVIGATION } from "@ngrx/router-store";
+import { ROUTER_NAVIGATED } from "@ngrx/router-store";
 import { Store } from "@ngrx/store";
 import { of } from "rxjs";
 import { catchError, filter, map, switchMap, tap } from "rxjs/operators";
@@ -40,8 +40,6 @@ export class DashboardEffects {
     ofType(dashboardLoadDataFailure),
     switchMap(() => [errorWhileFetchingData(), setLoading({isLoading: false})])
   ));
-
-
 
   constructor(
     private action$: Actions,

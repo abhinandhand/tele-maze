@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 import { ErrorNotFoundComponent } from './components/error/404/404.component';
 import { ErrorEffects } from './components/error/effects/error.effects';
+import { NetworkErrorComponent } from './components/error/network-error/network-error.component';
 import { GenreShowListComponent } from './components/feature/genre-show-list/genre-show-list.component';
 import { ShowCardComponent } from './components/feature/show-card/show-card.component';
 import { ButtonComponent } from './components/ui-components/button/button.component';
@@ -16,8 +17,9 @@ import { LoaderComponent } from './components/ui-components/loader/loader.compon
 import { ModalComponent } from './components/ui-components/modal/modal.component';
 import { RadioButtonComponent } from './components/ui-components/radio-button/radio-button.component';
 import { SearchFieldComponent } from './components/ui-components/search-field/search-field.component';
-import { ImgFallbackDirective } from './directives/image-fall-back.directive';
-import { NetworkErrorComponent } from './components/error/network-error/network-error.component';
+import { ImgFallbackDirective } from './directives/image-fall-back/image-fall-back.directive';
+import { ImageLazyLoadDirective } from './directives/image-lazy-load/image-lazy-load.directive';
+import { DescriptionListComponent } from './components/ui-components/description-list/description-list.component';
 
 
 
@@ -36,7 +38,9 @@ import { NetworkErrorComponent } from './components/error/network-error/network-
     GenreShowListComponent,
     SearchFieldComponent,
     ImgFallbackDirective,
-    NetworkErrorComponent
+    NetworkErrorComponent,
+    ImageLazyLoadDirective,
+    DescriptionListComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +54,9 @@ import { NetworkErrorComponent } from './components/error/network-error/network-
     LoaderComponent,
     GenreShowListComponent,
     ShowCardComponent,
-    ImgFallbackDirective
+    ImgFallbackDirective,
+    ImageLazyLoadDirective,
+    DescriptionListComponent
   ]
 })
 export class SharedModule { }

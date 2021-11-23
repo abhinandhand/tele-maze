@@ -1,6 +1,6 @@
-import { DeviceType } from "../shared.enum";
+import { DeviceType, ScreenWidthType } from "../shared.enum";
 
 export interface Settings {
-  userAgent: string;
-  deviceType: DeviceType;
+  userAgent: DeviceType;
+  screenWidthType: ScreenWidthType;
 }

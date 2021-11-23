@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { retry } from 'rxjs/operators';
 import { TvShow, TvShowSearchResults } from '../models/tvshow.model';
 
 const apiBaseUrl = ' https://api.tvmaze.com/';
@@ -22,19 +22,20 @@ export class TeleMazeService {
 
   getAllShows(): Observable<TvShow[]> {
 
-    return this.httpClient.get<any>(`${apiBaseUrl}${MazeEndPoint.AllShows}`)
-      .pipe(map(response => response as TvShow[]));
+    return this.httpClient.get<TvShow[]>(`${apiBaseUrl}${MazeEndPoint.AllShows}`).
+      pipe(retry(3));
   }
 
   showDetail(showId: string): Observable<TvShow> {
-    return this.httpClient.get<any>(`${apiBaseUrl}${MazeEndPoint.Detail}${showId}`)
-      .pipe(map(response => response as TvShow));
+    return this.httpClient.get<TvShow>(`${apiBaseUrl}${MazeEndPoint.Detail}${showId}`)
+      .pipe(retry(3));
   }
 
   search(searchTerm: string): Observable<TvShowSearchResults[]> {
 
-    return this.httpClient.get<any>(`${apiBaseUrl}${MazeEndPoint.Search}`, {params: { q : searchTerm}})
-      .pipe(map(response => response as TvShowSearchResults[]));
+    return this.httpClient.get<TvShowSearchResults[]>(`${apiBaseUrl}${MazeEndPoint.Search}`, {params: { q : searchTerm}})
+      .pipe(
+        retry(3));
   }
 
 }

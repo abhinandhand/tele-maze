@@ -11,6 +11,7 @@
 
     @include respond(mobile){
       flex-direction: column-reverse;
+      margin: 0;
     }
 
     &-info{
@@ -19,6 +20,12 @@
       flex-basis: 0%;
       height: inherit;
       padding: 3rem 3rem 0rem;
+
+      @include respond(mobile){
+        padding: 3rem 0rem;
+
+      }
+
 
       .title {
         font-weight: 200;
@@ -44,32 +51,6 @@
       .description {
         margin-top: 2rem;
         font-size: 1.2rem;
-
-        dl {
-          display: grid;
-          grid-template-columns: 0.18fr 1fr;
-          margin-bottom: 0.4rem;
-          color: $color-grey;
-
-          @include respond(tab-port) {
-            grid-template-columns: 0.4fr 1fr;
-          }
-
-          @include respond(mobile) {
-            grid-template-columns: 0.4fr 1fr;
-          }
-
-          dt {
-            flex-basis: 100%;
-            font-weight: 700;
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-
-          dd {
-            flex-basis: 100%;
-          }
-        }
       }
     }
 

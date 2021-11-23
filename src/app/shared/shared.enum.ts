@@ -20,9 +20,21 @@ export enum TeleMazeRoutes {
   PageNotFound = 'error/404',
 }
 
-export enum DeviceType {
+export enum ScreenWidthType {
   Mobile = 'mobile',
   TabletPortrait = 'tab-port',
   TabletLandscape = 'tab-land',
   Desktop = 'desktop'
 }
+
+export enum DeviceType {
+  Mobile = 'mobile',
+  Tablet = 'tablet',
+  Desktop = 'desktop'
+}
+
+export enum ImageBreakPoint {
+  Medium = '600w',
+  Orginal = '800w'
+}
+

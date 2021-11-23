@@ -7,6 +7,12 @@
 		"strict": true,
 		"strictNullChecks": false,
 		"strictPropertyInitialization": false,
+    "strictFunctionTypes": false,
+		"noImplicitAny": true,
+		"strictBindCallApply": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true
   },
   "files": [
     "src/main.ts",
