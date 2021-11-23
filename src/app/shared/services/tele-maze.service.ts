@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { retry } from 'rxjs/operators';
+import { delay, retry } from 'rxjs/operators';
 import { TvShow, TvShowSearchResults } from '../models/tvshow.model';
 
 const apiBaseUrl = ' https://api.tvmaze.com/';
@@ -35,6 +35,7 @@ export class TeleMazeService {
 
     return this.httpClient.get<TvShowSearchResults[]>(`${apiBaseUrl}${MazeEndPoint.Search}`, {params: { q : searchTerm}})
       .pipe(
+        delay(800),
         retry(3));
   }
 

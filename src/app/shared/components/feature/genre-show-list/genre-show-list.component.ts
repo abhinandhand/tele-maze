@@ -27,9 +27,9 @@ export class GenreShowListComponent implements AfterViewInit {
   constructor(private store: Store, private cd: ChangeDetectorRef) { }
 
   ngAfterViewInit() {
-    this.listContainerWidth += this.genreListElement.nativeElement.clientWidth;
+    this.listContainerWidth += this.genreListElement?.nativeElement.clientWidth;
     this.currentScrollPosition = this.listContainerWidth;
-    this.overallScrollWidth = this.genreListElement.nativeElement.scrollWidth;
+    this.overallScrollWidth = this.genreListElement?.nativeElement.scrollWidth;
 
     this.cd.detectChanges();
   }

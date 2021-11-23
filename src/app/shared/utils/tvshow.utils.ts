@@ -6,8 +6,8 @@ export function   mapTvShows(searchresults: TvShowSearchResults[]): TvShow[] {
     score: data.score,
     id: data.show.id,
     genres: data.show.genres,
-    image: data.show.image,
-    imageSrcSet: `${data.show.image.medium} ${ImageBreakPoint.Medium}, ${data.show.image.original} ${ImageBreakPoint.Orginal}`,
+    image: data.show?.image,
+    imageSrcSet: `${data.show?.image?.medium} ${ImageBreakPoint.Medium}, ${data.show?.image?.original} ${ImageBreakPoint.Orginal}`,
     language: data.show.language,
     name: data.show.name,
     premiered: data.show.premiered,
@@ -23,6 +23,6 @@ export function mapTvShow(result: TvShow): TvShow {
 
   return {
     ...result,
-    imageSrcSet: `${image.medium} ${ImageBreakPoint.Medium}, ${image.original} ${ImageBreakPoint.Orginal}`,
+    imageSrcSet: `${image?.medium} ${ImageBreakPoint.Medium}, ${image?.original} ${ImageBreakPoint.Orginal}`,
   }
 }

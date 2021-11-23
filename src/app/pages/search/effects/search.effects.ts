@@ -29,8 +29,9 @@ export class SearchEffects {
             ]
           })
         )),
-        catchError(() => of(searchLoadDataFailure()))
+        catchError((error) => of(searchLoadDataFailure()))
       ));
+
 
   searchLoadDataFailure$ = createEffect(() => this.action$.pipe(
     ofType(searchLoadDataFailure),
@@ -45,7 +46,7 @@ export class SearchEffects {
   constructor(
     private action$: Actions,
     private store: Store,
-    private teleMazeService: TeleMazeService,
+    private teleMazeService: TeleMazeService
   ){}
 
 
