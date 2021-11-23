@@ -1,0 +1,27 @@
+@import '../../../../../styles/abstracts/config';
+
+dl {
+  display: grid;
+  grid-template-columns: 0.18fr 1fr;
+  margin-bottom: 0.4rem;
+  color: $color-grey;
+
+  @include respond(tab-port) {
+    grid-template-columns: 0.4fr 1fr;
+  }
+
+  @include respond(mobile) {
+    grid-template-columns: 0.4fr 1fr;
+  }
+
+  dt {
+    flex-basis: 100%;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  dd {
+    flex-basis: 100%;
+  }
+}

@@ -7,14 +7,20 @@ export interface TvShow {
   language: string;
   genres: Genre[],
   averageRuntime: number;
-  rating: number;
+  rating: Rating;
   image: ShowImages;
   summary: string;
   premiered: string;
+  imageSrcSet: string;
+  status: string;
   score?: number;
 }
 
 export interface TvShowSearchResults{
   score: number;
   show: TvShow
+}
+
+export interface Rating {
+  average: number;
 }

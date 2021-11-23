@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Settings } from 'src/app/shared/models/settings.mode';
@@ -8,9 +8,10 @@ import { selectSettings } from 'src/app/store/settings/reducer/settings.selector
 @Component({
   selector: 'genre-show-list',
   templateUrl: './genre-show-list.component.html',
-  styleUrls: ['./genre-show-list.component.scss']
+  styleUrls: ['./genre-show-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GenreShowListComponent implements AfterViewInit, OnDestroy {
+export class GenreShowListComponent implements AfterViewInit {
 
   currentScrollPosition: number = 0;
   overallScrollWidth: number = 0;
@@ -23,14 +24,14 @@ export class GenreShowListComponent implements AfterViewInit, OnDestroy {
 
   deviceSetting$: Observable<Settings> = this.store.select(selectSettings);
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private cd: ChangeDetectorRef) { }
 
   ngAfterViewInit() {
-    setTimeout(() => {
     this.listContainerWidth += this.genreListElement.nativeElement.clientWidth;
     this.currentScrollPosition = this.listContainerWidth;
     this.overallScrollWidth = this.genreListElement.nativeElement.scrollWidth;
-    })
+
+    this.cd.detectChanges();
   }
 
   scrollLeft(){
@@ -47,8 +48,8 @@ export class GenreShowListComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  ngOnDestroy() {
-    clearTimeout();
+  trackByTvShowIndex(_index: number, item: TvShow) {
+    return item.id;
   }
 
 }

@@ -14,7 +14,7 @@ import { detailPageOnDestroy } from '../../actions/detail.actions';
 export class ShowDetailComponent implements OnInit, OnDestroy {
   isLoading$: Observable<boolean> = this.store.select(getLoadingState);
 
-  detailedShow$: Observable<TvShow[]> =  this.store.select(selectDetailedShow)
+  detailedShow$: Observable<TvShow> =  this.store.select(selectDetailedShow)
 
   constructor(private store: Store) { }
 

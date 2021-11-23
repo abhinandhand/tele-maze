@@ -32,3 +32,9 @@ export enum DeviceType {
   Tablet = 'tablet',
   Desktop = 'desktop'
 }
+
+export enum ImageBreakPoint {
+  Medium = '600w',
+  Orginal = '800w'
+}
+

@@ -18,8 +18,22 @@
       margin-top: 0.75rem;
       overflow: hidden;
 
-      &.touch-screen{
-        overflow-x: scroll;
+      @include respond(tab-land) {
+        &.touch-screen {
+            overflow-x: scroll;
+        }
+      }
+
+      @include respond(tab-port) {
+        &.touch-screen {
+            overflow-x: scroll;
+        }
+      }
+
+      @include respond(mobile) {
+        &.touch-screen {
+            overflow-x: scroll;
+        }
       }
 
       show-card {

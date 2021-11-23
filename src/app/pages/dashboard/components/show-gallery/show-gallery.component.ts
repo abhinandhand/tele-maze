@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { TvShow } from 'src/app/shared/models/tvshow.model';
@@ -9,7 +9,8 @@ import { dashboardPageOnDestroy } from '../../actions/dashboard.actions';
 @Component({
   selector: 'app-show-gallery',
   templateUrl: './show-gallery.component.html',
-  styleUrls: ['./show-gallery.component.scss']
+  styleUrls: ['./show-gallery.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShowGalleryComponent implements OnInit {
   isLoading$: Observable<boolean> = this.store.select(getLoadingState);

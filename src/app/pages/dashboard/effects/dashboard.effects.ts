@@ -41,8 +41,6 @@ export class DashboardEffects {
     switchMap(() => [errorWhileFetchingData(), setLoading({isLoading: false})])
   ));
 
-
-
   constructor(
     private action$: Actions,
     private teleMazeService: TeleMazeService,
