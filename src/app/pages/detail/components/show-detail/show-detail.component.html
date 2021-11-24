@@ -1,4 +1,4 @@
-<ng-container *ngIf="isLoading$ | async; else displayTvShow">
+<ng-container *ngIf="(isLoading$ | async); else displayTvShow">
   <loader></loader>
 </ng-container>
 

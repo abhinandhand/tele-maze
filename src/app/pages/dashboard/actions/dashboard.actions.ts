@@ -10,5 +10,5 @@ export const dashboardLoadDataFailure = createAction(
 
 export const dashboardPageOnDestroy = createAction(
   '[Dashboard Page] On Leaving the Dashboard Page'
-)
+);
 

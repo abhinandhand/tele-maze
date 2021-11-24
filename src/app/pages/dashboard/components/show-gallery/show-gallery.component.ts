@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { TvShow } from 'src/app/shared/models/tvshow.model';
@@ -12,7 +12,7 @@ import { dashboardPageOnDestroy } from '../../actions/dashboard.actions';
   styleUrls: ['./show-gallery.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ShowGalleryComponent implements OnInit {
+export class ShowGalleryComponent implements OnDestroy {
   isLoading$: Observable<boolean> = this.store.select(getLoadingState);
 
   topRatedShows$: Observable<TvShow[]> = this.store.select(selectTopRatedShows)
@@ -28,9 +28,6 @@ export class ShowGalleryComponent implements OnInit {
 
 
   constructor(private store: Store) { }
-
-  ngOnInit(): void {
-  }
 
   ngOnDestroy(): void {
     this.store.dispatch(dashboardPageOnDestroy());

@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { ILoaderState } from ".";
+import { ILoaderState } from "./loader.reducer";
 
 const selectState = createFeatureSelector<ILoaderState>('loader');
 

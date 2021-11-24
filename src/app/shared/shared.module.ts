@@ -9,6 +9,7 @@ import { NetworkErrorComponent } from './components/error/network-error/network-
 import { GenreShowListComponent } from './components/feature/genre-show-list/genre-show-list.component';
 import { ShowCardComponent } from './components/feature/show-card/show-card.component';
 import { ButtonComponent } from './components/ui-components/button/button.component';
+import { DescriptionListComponent } from './components/ui-components/description-list/description-list.component';
 import { DialogComponent } from './components/ui-components/dialog/dialog.component';
 import { DropdownComponent } from './components/ui-components/dropdown/dropdown.component';
 import { HeaderComponent } from './components/ui-components/header/header.component';
@@ -19,8 +20,6 @@ import { RadioButtonComponent } from './components/ui-components/radio-button/ra
 import { SearchFieldComponent } from './components/ui-components/search-field/search-field.component';
 import { ImgFallbackDirective } from './directives/image-fall-back/image-fall-back.directive';
 import { ImageLazyLoadDirective } from './directives/image-lazy-load/image-lazy-load.directive';
-import { DescriptionListComponent } from './components/ui-components/description-list/description-list.component';
-import { SearchEffects } from '../pages/search/effects/search.effects';
 
 
 
@@ -48,7 +47,7 @@ import { SearchEffects } from '../pages/search/effects/search.effects';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    EffectsModule.forFeature([ErrorEffects, SearchEffects])
+    EffectsModule.forFeature([ErrorEffects])
   ],
   exports:[
     HeaderComponent,
