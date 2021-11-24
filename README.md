@@ -145,6 +145,7 @@ Website has 3 pages namely, Dashboard, Detail & Search page. Each of the page ar
      
   ## Improvement points
    * Complete the unit tests for NgRX effects
+   * Add hover effect on cards to display more information of the show
    * Write E2E unit tests with protractor
    * Manage the font-size of the website better
     
