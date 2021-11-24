@@ -17,7 +17,7 @@ Goal of this project is to browse TV Shows based on the rating and Genre. Users 
  * RxJs
  * Pure CSS & SCSS
  
-Eventough I prefer to use Vue-Nuxt framework for personal projects, I choose Angular here, because last few months have been working full time on Angular. I felt, it would be much easier & faster to build as the code syntax is ready on my mind. My ultimate focus was here to build a scalable, maintainable & high performance application.
+Eventough I prefer to use Vue-Nuxt framework for personal projects, I choose Angular here, because last few months have been working full time on Angular. I felt, it would be much easier & faster to build as the code syntax is on top of my mind. My ultimate focus was here to build a scalable, maintainable & high performance application.
 
 
 ### To Run on local machine
