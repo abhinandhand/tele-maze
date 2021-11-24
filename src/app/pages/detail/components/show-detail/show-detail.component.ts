@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { TvShow } from 'src/app/shared/models/tvshow.model';
@@ -11,15 +11,13 @@ import { detailPageOnDestroy } from '../../actions/detail.actions';
   templateUrl: './show-detail.component.html',
   styleUrls: ['./show-detail.component.scss']
 })
-export class ShowDetailComponent implements OnInit, OnDestroy {
+export class ShowDetailComponent implements OnDestroy {
   isLoading$: Observable<boolean> = this.store.select(getLoadingState);
 
   detailedShow$: Observable<TvShow> =  this.store.select(selectDetailedShow)
 
   constructor(private store: Store) { }
 
-  ngOnInit(): void {
-  }
 
   ngOnDestroy(): void {
     this.store.dispatch(detailPageOnDestroy());

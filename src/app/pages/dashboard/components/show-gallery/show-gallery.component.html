@@ -1,4 +1,4 @@
-<ng-container *ngIf="isLoading$ | async; else displayTvShow">
+<ng-container *ngIf="(isLoading$ | async); else displayTvShow">
   <loader></loader>
 </ng-container>
 
@@ -11,5 +11,5 @@
   <genre-show-list [shows]="(romanceShows$ | async)" [title]="'Romance shows'"></genre-show-list>
   <genre-show-list [shows]="(crimeShows$ | async)" [title]="'Crime shows'"></genre-show-list>
   <genre-show-list [shows]="(musicShows$ | async)" [title]="'Music shows'"></genre-show-list>
-  <genre-show-list [shows]="(scienceFictionShows$ | async)" [title]="'Science Fiction show'">s</genre-show-list>
+  <genre-show-list [shows]="(scienceFictionShows$ | async)" [title]="'Science Fiction show'"></genre-show-list>
 </ng-template>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
-import { loaderFeatureKey, loaderReducer } from './reducer';
+import { loaderFeatureKey, loaderReducer } from './reducer/loader.reducer';
 
 @NgModule({
   declarations: [],

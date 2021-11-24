@@ -9,7 +9,7 @@ import { TvShow } from 'src/app/shared/models/tvshow.model';
 })
 export class ShowCardComponent implements OnInit {
 
-  @Input() show: TvShow;
+  @Input() show!: TvShow;
 
   constructor() { }
 

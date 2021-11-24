@@ -8,7 +8,6 @@ import { determineAppSetting } from './store/settings/actions/settings.actions';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'tele-maze';
 
   ngOnInit() {
     this.store.dispatch(determineAppSetting())
